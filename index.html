@@ -10,12 +10,19 @@
         .wrapper{
         }
         .imgShow{
-            padding: 0 auto;
             width: 400px;
             height: 300px;
             overflow: hidden;
+            margin: 20px auto;
+            
         }
         .images{
+            display: flex;
+            flex-direction: row;
+            transition: all 1s;
+        }
+        .buttons{
+            text-align: center;
         }
     </style>
 </head>
@@ -28,6 +35,12 @@
                     <img src="./img/apple3.png"  width="400" height="300">
                     <img src="./img/apple4.png"  width="400" height="300">
             </div>
+        </div>
+        <div id="buttons" class="buttons">
+            <button>第1张</button>
+            <button>第2张</button>
+            <button>第3张</button>
+            <button>第4张</button>
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
