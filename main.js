@@ -14,12 +14,27 @@ function bindEvents(){
         let index = $button.index()
         goSlide(index)
     })
+    $('#previous').on('click', function(){
+        if(current === 0){
+            goSlide($imagesChildren.length -1)
+        }else{
+            goSlide(current - 1) 
+        }
+    })
+    $('#next').on('click', function(){
+        if(current === $imagesChildren.length -1){
+            goSlide(0)
+        }else{
+            goSlide(current + 1)
+        }
+    })
 }
 
 function goSlide(index){
     console.log('c='+current + ' i='+index )
-    if(current === index) return;
-    if(current === 0 && index === $imagesChildren.length -1){
+    if(current === index){
+        return;
+     }else if(current === 0 && index === $imagesChildren.length -1){
     // 第一张 >> 最后一张 
         $('#images').css({transform: `translateX(0px)`})
         .one(`transitionend`, function(){
